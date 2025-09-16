@@ -1,0 +1,128 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[top=1cm, left=1cm, right=1cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{array}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\usepackage{sectsty}
+\allsectionsfont{\centering}
+
+\usepackage{indentfirst}
+\setlength\parindent{24pt}
+
+\usepackage{makecell}
+
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\normalsize\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\usepackage{graphicx}
+\graphicspath{ {plots/pictures/} }
+
+\usepackage{booktabs}
+\usepackage{csvsimple}
+\usepackage{longtable}
+\usepackage{caption}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\large \textbf{Министерство науки и высшего образования Российской Федерации} \\
+			\large \textbf{Федеральное государственное бюджетное образовательное учреждение высшего образования} \\
+			\large \textbf{«Российский химико-технологический университет имени Д.И. Менделеева»} \\
+
+			\vspace*{6cm}
+			\LARGE \textbf{ЛЕКЦИЯ №2}
+
+			\vspace*{4cm}
+			\begin{flushright}
+				\Large
+				\begin{tabular}{>{\raggedleft\arraybackslash}p{9cm} p{10cm}}
+					Выполнил студент группы КС-36: & Золотухин Андрей Александрович \\
+					Ссылка на репозиторий: & https://github.com/ \\
+					& CorgiPuppy/ \\
+					& chem-tech-control-sys-labs \\
+				\end{tabular}
+			\end{flushright}
+
+			\vspace*{5cm}
+			\Large \textbf{Москва \\ 2025}
+		\end{center}
+	\end{titlepage}
+
+	\tableofcontents
+	\thispagestyle{empty}
+	\newpage
+
+	\pagenumbering{arabic}
+
+	\section*{Термодинамический анализ}
+	\addcontentsline{toc}{section}{Термодинамический анализ}
+
+	\subsection*{Диссипативная функция многофазной гетерогенной среды}
+	\addcontentsline{toc}{subsection}{Диссипативная функция многофазной гетерогенной среды}
+	\large
+	Получу диссипативную функцию многофазной гетерогенной среды - \textit{производство энтропии}, - которая играет важную роль в термодинамике необратимых процессов. \par
+	Пусть имеется объём $V$, где находятся две фазы с объёмами $V_{1}$ и $V_{2}$. Пусть смесь в целом неравновесна. Но в каждой фазе в малом локальном объёме существует локальное термодинамическое равновесие; тогда для каждой из фаз (в малом локальном объёме выполняется соотношение Гиббса:
+	\begin{center}
+		$\rho_{i} T_{i} \frac{d_{i} S_{i}}{dt} = \rho_{i} \frac{d_{i} u_{i}}{dt} - \frac{\alpha_{i} P_{i}}{\rho_{i}^{0}}\frac{d_{i} \rho_{i}}{dt} - \rho_{i} \mu_{ik} \frac{d C_{ik}}{dt}$,
+	\end{center}
+	где $S_{i}$ - удельная энтропия $i$-фазы; $\mu_{ik}$ - химический потенциал $k$-ого компонента в $i$-фазе. \par
+	Энтропия всей системы имеет вид
+	\begin{center}
+		$\rho S = \rho_{1}S_{1} + \int_{0}^{R} \rho_{2}^{0} f r S_{2} dr$.
+	\end{center}
+	\par
+	Изменение энтропии всей системы во времени имеет вид:
+	\begin{center}
+		$\rho \frac{dS}{dt} = \rho_{i} \frac{d_{i} S_{i}}{dt} + \int_{0}^{R} \rho_{2}^{0} f r \frac{d_{2} S_{2}}{dt} dr + \int_{0}^{R} \rho_{2}^{0} f \eta (S_{2} - S_{1}) dr$.
+	\end{center}
+	\par
+	Подставим в данную формулу соотношения Гиббса для каждой из фаз, а в соответствующие соотношения Гиббса подставим уравнения изменения внутренних энергий и концетраций компонентов и, приведя подобные члены, получим
+	\begin{center}
+		$\rho \frac{dS}{dt} = (-\nabla(\frac{\vec{q_{1}}}{T_{1}}) + \nabla(\frac{\mu_{1k} \vec{J_{1k}}}{T_{1}})) + (\frac{1}{T_{1}} \tau_{1}^{kl} e_{1}^{kl} + \frac{\vec{q_{1}}}{T_{1}} gradT_{1} + \vec{J_{1k}} grad \frac{\mu_{1k}}{T_{1}} + \int_{0}^{R} q_{12} (\frac{1}{T_{2}} - \frac{1}{T_{1}}) dr + \frac{1}{T_{1}} \int_{0}^{R} \rho_{2}^{0} f r \vec{f_{12}} (\vec{\nu_{1}} - \vec{\nu_{2}}) dr + \int_{0}^{R} \rho_{2}^{0} f \eta ((\frac{\mu_{1k}}{T_{2}} - \frac{\mu_{2k}}{T_{2}}) + i_{1}(\frac{1}{T_{2}} - \frac{1}{T_{1}})) dr)$.
+	\end{center}
+	\par
+	Таким образом, изменение энтропии можно представить в виде суммы двух слагаемых:
+	\begin{equation}
+		\rho \frac{dS}{dt} = \rho \frac{dS^{(l)}}{dt} + \rho \frac{dS^{(i)}}{dt},
+	\end{equation}
+\end{document}
