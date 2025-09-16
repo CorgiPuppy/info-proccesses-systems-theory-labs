@@ -1,0 +1,155 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[top=1cm, left=1cm, right=1cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{array}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\usepackage{sectsty}
+\allsectionsfont{\centering}
+
+\usepackage{indentfirst}
+\setlength\parindent{24pt}
+
+\usepackage{makecell}
+
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\normalsize\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\usepackage{graphicx}
+\graphicspath{ {plots/pictures/} }
+
+\usepackage{booktabs}
+\usepackage{csvsimple}
+\usepackage{longtable}
+\usepackage{caption}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\large \textbf{Министерство науки и высшего образования Российской Федерации} \\
+			\large \textbf{Федеральное государственное бюджетное образовательное учреждение высшего образования} \\
+			\large \textbf{«Российский химико-технологический университет имени Д.И. Менделеева»} \\
+
+			\vspace*{6cm}
+			\LARGE \textbf{ЛЕКЦИЯ №1}
+
+			\vspace*{4cm}
+			\begin{flushright}
+				\Large
+				\begin{tabular}{>{\raggedleft\arraybackslash}p{9cm} p{10cm}}
+					Выполнил студент группы КС-36: & Золотухин Андрей Александрович \\
+					Ссылка на репозиторий: & https://github.com/ \\
+					& CorgiPuppy/ \\
+					& chem-tech-control-sys-labs \\
+				\end{tabular}
+			\end{flushright}
+
+			\vspace*{5cm}
+			\Large \textbf{Москва \\ 2025}
+		\end{center}
+	\end{titlepage}
+
+	\tableofcontents
+	\thispagestyle{empty}
+	\newpage
+
+	\pagenumbering{arabic}
+
+	\section*{Термодинамический анализ}
+	\addcontentsline{toc}{section}{Термодинамический анализ}
+
+	\subsection*{Уравнения сохранения}
+	\addcontentsline{toc}{section}{Уравнения сохранения}
+	\large
+	Рассмотрю многофазную полидисперсную среду, где первая фаза (\underline{сплошная несущая}) - газ или жидкость, \textit{r} - фаза включений частиц, капель или пузырьков, размеры (\underline{объёмы}) которых \textit{r - dr}, \textit{r + dr}. \\
+	Введу средние плотности в каждой точке объёма, занятого смесью:
+	\begin{center}
+		$\rho = \rho_{1} + \int_{0}^{R} \rho_{2}^{0} f(r)rdr$; $\>$ $\alpha = \alpha_{1} + \int_{0}^{R} rf(r)dr$; \\
+		$\rho_{1} = \rho_{1}^{0} \alpha_{1}$; $\>$ $\alpha_{2} = \int_{0}^{R} rf(r)dr$,
+	\end{center}
+	где $\alpha_{i}$ - объёмные содержания фаз; $\rho$ - плотность смеси; $\rho_{i}^{0}$, $\rho_{i}$ - истинные и средние плотности фаз соответственно; $R$ - наибольший размер (\underline{объём}) включения; индекс $1$ относится к \underline{несущей} фазе, индекс $2$ - ко всей дисперсной (гетерогенной) фазе. \par
+	Дисперсность гетерогенной фазы характеризуется функцией $f(r)$, так что $f(r)dr$ - число включений в единице объёма смеси, размеры (\underline{объёмы}) которых от $r$ до $r + dr$. \par
+	Можно принять, что несущая фаза и все $r$-фазы - континуумы (материальная среда, которая считается сплошной, т.е. не разделенной на отдельные частицы или молекулы), заполняющие один и тот же объём и имеющие свою плотность, массу, скорость, температуру. \par
+	Введение многоскоростного континуума необходимо, т.к. скорости относительного движения фаз в смеси по порядку могут быть равны скоростям их абсолютного движения. 1-ю фазу буду описывать моделью вязкой жидкости. В качестве тензоров поверхностных $\sigma_{1}^{kl}$, $\sigma_{2}^{kl}$ сил и тензоров вязких напряжений $\tau_{1}^{kl}$ приму:
+	\begin{center}
+		$\sigma_{1}^{kl} = -P_{1}\delta^{kl} + \tau_{1}^{kl}$, $\>$ $\sigma_{2}^{kl} = 0$, $\>$ $\tau_{1}^{kl} = \lambda \nabla \nu_{1} + 2\mu_{1}e_{1}^{kl}$,
+	\end{center}
+	где $\sigma^{kl}$ - символ Кронекера; $P_{1}$ - давление; $e_{1}^{kl}$ - тензор скоростей деформаций несущей фазы; $\lambda$, $\mu_{1}$ - коэффициенты вязкости. \par
+	\textbf{Уравнение сохранения массы сплошной фазы}:
+	\begin{equation}\label{eq:conservationMassSolidPhase}
+		\frac{\partial \rho_{1}}{\partial t} + div(\rho_{1} \nu_{1}) = -\int_{0}^{R} \rho_{2}^{0} f \eta dr,
+	\end{equation}
+	где $\nu_{1}$ - средняя массовая скорость несущей фазы; $R$ - максимальный размер (\underline{объём}) включений; $\eta$ - наблюдаемая скорость изменения размера (\underline{объёма}) включения. \par
+	В уравнении \eqref{eq:conservationMassSolidPhase} член в правой части отражает \underline{суммарное влияние фазового перехода} \underline{на включениях}. \par
+	\textbf{Уравнение баланса числа включений с учётом изменения объёма включения за счёт фазового перехода}:
+	\begin{center}
+		$\frac{\partial f}{\partial t} + div(f \nu_{2}) + \frac{\partial}{\partial r}(f \eta) = 0$,
+	\end{center}
+	где $\nu_{2}$ - средняя массовая скорость $r$-фазы; \par
+	\textbf{Уравнения движения сплошной и $r$-фазы}:
+	\begin{center}
+		$\rho_{1} \frac{d_{1} \nu_{1}}{dt} = -\alpha_{1} \nabla P_{1} + \nabla^{k} \tau_{1}^{k} - \int_{0}^{R} \rho_{2}^{0} f r f_{12} dr - \int_{0}^{R} \rho_{2}^{0} f \eta (\nu_{2} - \nu_{1}) dr + F_{1}$, \\
+		$\frac{D_{2}}{Dt}\nu_{2}(r) = - \nabla \frac{P_{1}}{\rho_{2}^{0}} + f_{12}(r) + F_{2}(r)$,	
+	\end{center}
+	где $P$ - давление $[\nabla P = (\frac{\partial P}{\partial x}, \frac{\partial P}{\partial y}, \frac{\partial P}{\partial z})]$; $F_{1}$, $F_{2}$ - массовые силы, действующие на несущую и $r$-фазу соответственно; $f_{12}$ - сила взаимодействия между несущей и $r$-фазами. \par
+	\textit{1-ое слагаемое} в правых частях уравнений характеризует влияние поверхностных сил, действующих на каждую фазу; член, содержащий силу взаимодействия $f_{12}$, определяет влияние сил трения на движение несущей и $r$-фазы соответственно; слагаемое, содержащее $F_{i} (i = 1, 2)$, отображает воздействие массовых сил на изменение импульса несущей фазы и включения соответственно; \textit{4-ое слагаемое} в уравнении движения несущей фазы представляет изменение импульса несущей фазы за счёт фазового превращения. \par
+	\textbf{Уравнение изменения внутренней энергии сплошной фазы}:
+	\small
+	\begin{equation}\label{eq:changeInternalEnergySolidPhase}
+		\rho_{1} \frac{d_{1} u_{1}}{dt} = \frac{\alpha_{1} P_{1}}{\rho_{1}^{0}}\frac{d \rho_{1}^{0}}{dt} + \tau_{1}^{kl} e_{1}^{kl} + \int_{0}^{R} \rho_{2}^{0} f r f_{12} (\nu_{1} - \nu_{2}) dr + \int_{0}^{R} \rho_{2}^{0} f \eta \frac{(\nu_{2} - \nu_{1})^{2}}{2} dr - \int_{0}^{R} q_{1 \sigma} dr - \nabla q_{1} + \rho_{1} Q_{1*},
+	\end{equation}
+	\large
+	где $u_{1}$ - удельная внутренняя энергия несущей фазы; $q_{1 \sigma}$ - поток тепла (не связанный с фазовыми переходами), отнесённый к единице объёма смеси от несущей фазы к поверхности раздела фаз; $\rho_{1} Q_{1*}$ - мощность объёмного источника тепла в 1-фазе. \par
+	\textit{1-ое слагаемое} в правой части в уравнении \eqref{eq:changeInternalEnergySolidPhase} представляет обратимую работу сжатия материала фазы. \textit{2-ое} и \textit{3-е слагаемые} представляют переход кинетической энергии во внутреннюю энергию за счёт вязкостного взаимоедйствия как в самой несущей фазе, так и при взаимодействии с включениями. \textit{4-ое слагаемое} характеризует переход во внутреннюю энергию части кинетической энергии из-за неравновесного обмена импульсом при фазовых превращениях, происходящих при неравных скоростях фаз; \textit{5-ое}, \textit{6-ое}, \textit{7-ое слагаемые} характеризуют изменение внутренней энергии сплошной фазы за счёт теплообмена с поверхностью раздела фаз, теплопереноса в сплошной фазе путём теплопроводности, наличия источника тепла. \par
+	\textbf{Уравнение изменения внутренней энергии дисперсной фазы}:
+	\begin{equation}\label{eq:changeInternalEnergyDispersedPhase}
+		\rho_{2}^{0} f r \frac{D_{2} u_{2}}{dt} = \frac{\alpha_{2} P_{2}}{\rho_{2}^{0}}\frac{d \rho_{2}^{0}}{dt} - q_{2 \sigma}(r) + \rho_{2}^{0} f r Q_{2*},
+	\end{equation}
+	где $u_{2}$ - удельная внутренняя энергия $r$-фазы; $q_{2 \sigma}$ - поток тепла (не связанный с фазовыми переходами), отнесённый к единице объёма смеси от $r$-фазы к поверхности раздела фаз; $\rho_{2} Q_{2*}$ - мощность объёмного источника тепла во 2-фазе. \par
+	\textit{1-ое слагаемое} в правой части в уравнении \eqref{eq:changeInternalEnergyDispersedPhase} представляет обратимую работу сжатия материала фазы. \textit{2-ое} и \textit{3-е слагаемые} в правой части отражают изменение внутренней энергии $r$-фазы за счёт теплообмена с поверхностью раздела фаз, наличия источника тепла.
+	\textbf{Уравнение изменения внутренней энергии поверхности раздела фаз (сплошной и $r$-фазы)}:
+	\begin{equation*}
+		f \frac{D_{2} u_{\sigma}^{1}}{Dt} = q_{1 \sigma}(r) + q_{2 \sigma}(r) - \rho_{2}^{0} f \eta (i_{2} - i_{1}),
+	\end{equation*}
+	где $u_{\sigma}$ - поверхностная энергия, приходящаяся на одно включение; $i_{1}$, $i_{2}$ - энтальпии несущей и $r$-фазы соответственно. \par
+	\textit{1ое слагаемое} в правой части описывает теплообмен со сплошной фазой, \textit{2-ое слагаемое} - теплообмен с $r$-фазой. Приток (отток) тепла к поверхности раздела фаз за счёт фазового превращения, т.е. роль источник (стока) теплоа, необходимого для фазового превращения, принадлежит поверхности раздела фаз.
+\end{document}
