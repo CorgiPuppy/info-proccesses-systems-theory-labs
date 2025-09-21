@@ -32,6 +32,7 @@
 \pgfplotsset{compat=newest, ticks=none}
 
 \usepackage{wrapfig}
+\usepackage{float}
 
 \usepackage{listings}
 \usepackage{xcolor}
@@ -125,29 +126,44 @@
 		$\rho \frac{dS}{dt} = \{-\nabla(\frac{\vec{q_{1}}}{T_{1}}) + \nabla(\frac{\mu_{1k} \vec{J_{1k}}}{T_{1}})\} + \{\frac{1}{T_{1}} \tau_{1}^{kl} e_{1}^{kl} + \frac{\vec{q_{1}}}{T_{1}} gradT_{1} + \vec{J_{1k}} grad \frac{\mu_{1k}}{T_{1}} + \int_{0}^{R} q_{12} (\frac{1}{T_{2}} - \frac{1}{T_{1}}) dr + \frac{1}{T_{1}} \int_{0}^{R} \rho_{2}^{0} f r \vec{f_{12}} (\vec{\nu_{1}} - \vec{\nu_{2}}) dr + \int_{0}^{R} \rho_{2}^{0} f \eta [(\frac{\mu_{1k}}{T_{2}} - \frac{\mu_{2k}}{T_{2}}) + i_{1}(\frac{1}{T_{2}} - \frac{1}{T_{1}})] dr\}$.
 	\end{center}
 	\par
-	\small
-	\begin{wrapfigure}{l}{0.3\textwidth}
-		\centering
-		\begin{tikzpicture}
-			\begin{scope}
-				\filldraw[fill=white, very thick] (0,0) circle (1.5)
-					node[below=10mm, right] at (1.1,0) {$Fs$};
-				\path[clip, preaction={draw, thick}] (0,0) circle (1.5);
-				\fill[draw=black, thick, pattern=north west lines] (-2,2)--(-2,-2)--(2,-2)--(2,2) -- cycle;
-			\end{scope}
-			\draw[latex-] (1.4,0.5)--(3,1) node[above, pos=1.1] () {$A^{n}$};
-		\end{tikzpicture}
-	\end{wrapfigure}
-	\large
 	Проинтегрирую полученное соотношение по объёму $V$, занимаемому смесью, используя \textit{формулу Гаусса-Остроградского}:
 	\begin{center}
 		$\int_{V} divAdV = \int_{Fs} A^{n} dFs$,
 	\end{center}
 	где $A$ - вектор; $A^{n}$ - проекция вектора на нормаль к поверхности $S$.
+	\small
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=.5]
+			\filldraw[fill=white, thick] (0,0) circle (1.5)
+					node[below=9mm, left] at (-1,0) {$V$};
+			\node[draw, circle, thick, fill=white, minimum size=1mm, inner sep=0] at (0.3,0.7) {}; 
+			\node[draw, circle, thick, fill=black, minimum size=0.5mm, inner sep=0] at (-0.3,-0.7) {}; 
+			\node[draw, circle, thick, fill=black, minimum size=0.5mm, inner sep=0] at (-0.3,0.7) {}; 
+			\node[draw, circle, thick, fill=black, minimum size=0.5mm, inner sep=0] at (0.9,-0.9) {}; 
+			\node[draw, circle, thick, fill=black, minimum size=0.5mm, inner sep=0] at (0.4,0.3) {}; 
+
+			\draw[->, -{Stealth}] (3,0)--(7,0);
+
+			\begin{scope}
+				\filldraw[fill=white, very thick] (10,0) circle (1.5)
+					node[below=10mm, right] at (10.1,0) {$Fs$};
+				\path[clip, preaction={draw, thick}] (10,0) circle (1.5);
+				\fill[draw=black, thick, pattern=north west lines] (-12,12)--(-12,-12)--(12,-12)--(12,12) -- cycle;
+			\end{scope}
+			\draw[latex-] (11.4,0.5)--(13,1) node[above, pos=1.1] () {$A^{n}$};
+		\end{tikzpicture}
+	\end{figure}
+	\large
+	\par
+	Тогда получаю
+	\begin{center}
+		$\rho \frac{dS}{dt} = \int_{V} \rho \frac{dS}{dt} dV = \{\int_{Fs} -q_{1}^{n} dFs + \int_{Fs} \frac{\mu_{1k}}{T_{1}} J_{1k}^{n} dFs\} + \int_{V} \{\frac{1}{T_{1}} \tau_{1}^{kl} e_{1}^{kl} + \frac{\vec{q_{1}}}{T_{1}} gradT_{1} + \vec{J_{1k}} grad \frac{\mu_{1k}}{T_{1}} + \int_{0}^{R} q_{12} (\frac{1}{T_{2}} - \frac{1}{T_{1}}) dr + \frac{1}{T_{1}} \int_{0}^{R} \rho_{2}^{0} f r \vec{f_{12}} (\vec{\nu_{1}} - \vec{\nu_{2}}) dr + \int_{0}^{R} \rho_{2}^{0} f \eta [(\frac{\mu_{1k}}{T_{2}} - \frac{\mu_{2k}}{T_{2}}) + i_{1}(\frac{1}{T_{2}} - \frac{1}{T_{1}})] dr\} dV$.
+	\end{center}
 	\par
 	Таким образом, изменение энтропии можно представить в виде суммы двух слагаемых:
 	\begin{equation}
 		\rho \frac{dS}{dt} = \rho \frac{dS^{(l)}}{dt} + \rho \frac{dS^{(i)}}{dt},
 	\end{equation}
-
+	где $\rho \frac{dS^{(l)}}{dt} = -q_{1}^{n} dFs + \int_{Fs} \frac{\mu_{1k}}{T_{1}} J_{1k}^{n} dFs$ отражает изменение энтропии смеси за счёт обмена энергией и массой с окружающей средой. \textit{1-ое слагаемое} характеризует изменение энтропии за счёт обмена энергией ($q_{1}^{n}$ - поток тепла через поверхность), \textit{2-ое слагаемое} - за счёт обмена массой с окружающей средой ($J_{1k}^{n}$ - поток массы через поверхность).
 \end{document}
