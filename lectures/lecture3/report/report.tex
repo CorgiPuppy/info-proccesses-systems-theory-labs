@@ -1,0 +1,134 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[top=1cm, left=1cm, right=1cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{array}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\usepackage{sectsty}
+\allsectionsfont{\centering}
+
+\usepackage{indentfirst}
+\setlength\parindent{24pt}
+
+\usepackage{makecell}
+
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, patterns}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\normalsize\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\usepackage{graphicx}
+\graphicspath{ {plots/pictures/} }
+
+\usepackage{booktabs}
+\usepackage{csvsimple}
+\usepackage{longtable}
+\usepackage{caption}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest, ticks=none}
+
+\usepackage{wrapfig}
+\usepackage{float}
+
+\usepackage{multirow, tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\renewcommand{\arraystretch}{1.2}
+
+\usepackage{csquotes}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\large \textbf{Министерство науки и высшего образования Российской Федерации} \\
+			\large \textbf{Федеральное государственное бюджетное образовательное учреждение высшего образования} \\
+			\large \textbf{«Российский химико-технологический университет имени Д.И. Менделеева»} \\
+
+			\vspace*{6cm}
+			\LARGE \textbf{ЛЕКЦИЯ №3}
+
+			\vspace*{4cm}
+			\begin{flushright}
+				\Large
+				\begin{tabular}{>{\raggedleft\arraybackslash}p{9cm} p{10cm}}
+					Выполнил студент группы КС-36: & Золотухин Андрей Александрович \\
+					Ссылка на репозиторий: & https://github.com/ \\
+					& CorgiPuppy/ \\
+					& info-proccesses-systems-theory-labs \\
+				\end{tabular}
+			\end{flushright}
+
+			\vspace*{5cm}
+			\Large \textbf{Москва \\ 2025}
+		\end{center}
+	\end{titlepage}
+
+	\tableofcontents
+	\thispagestyle{empty}
+	\newpage
+
+	\pagenumbering{arabic}
+
+	\section*{Термодинамический анализ}
+	\addcontentsline{toc}{section}{Термодинамический анализ}
+
+	\subsection*{Термодинамика линейных необратимых систем}
+	\addcontentsline{toc}{subsection}{Термодинамика линейных необратимых систем}
+	\large
+	В термодинамике необратимых процессов \textit{Ларс Онзагер} сформулировал:
+	\begin{displayquote}
+		При небольших отклонениях от равновесия термодиначеский поток можно представить в виде линейной комбинации термодинамических потоков и термодинамических движущих сил:
+		\begin{center}
+			$J_{i} = L_{i1}X_{1} + L_{i2}X_{2} + L_{i3}X_{3} + \ldots + L_{ij}X_{j} + \ldots + L_{iN}X_{N}$,
+		\end{center}
+		где $X_{i}$ - движущая сила, сопряжённая с потоком $J_{1k}$ определяет прямой эффект; $X_{j}$ - движущая сила, характеризующая перекрёстный эффект; $L_{1k}$ - феноменологические эффекты: $L_{ii}$ - при прямом эффекте, $L_{ij} (i \neq j)$ - при перекрёстном эффекте.
+	\end{displayquote}
+	\par
+	Таким образом, диссипативную функцию (\textit{производство энтропии}) можно представить в виде квадратичной положительно определённой формы:
+	\begin{center}
+		$\sigma = \sum_{i=1}^{n} J_{i} X_{i} = \sum_{i=1}^{n} (\sum_{j=1}^{n} L_{ij} X_{j}) X_{i} \ge 0$.
+	\end{center}
+	\par
+	Положительность квадратичной формы следует из \textit{второго закона термодинамики}. В изолированной системе энтропия системы не может убывать. Поэтому если обмен энергией и массой с внешней средой отсутствует, изменение энтропии системы равно производству энтропии:
+	\begin{center}
+		$\rho \frac{dS}{dt} = \rho \frac{dS^{(i)}}{dt} = \sigma \ge 0$
+	\end{center}
+	и, следовательно, производство энтропии неотрицательно. \par
+\end{document}
