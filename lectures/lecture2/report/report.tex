@@ -28,11 +28,6 @@
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows.meta, patterns}
-\usepackage{pgfplots}
-\pgfplotsset{compat=newest, ticks=none}
-
-\usepackage{wrapfig}
-\usepackage{float}
 
 \usepackage{listings}
 \usepackage{xcolor}
@@ -66,6 +61,16 @@
 \usepackage{csvsimple}
 \usepackage{longtable}
 \usepackage{caption}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest, ticks=none}
+
+\usepackage{wrapfig}
+\usepackage{float}
+
+\usepackage{multirow, tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\renewcommand{\arraystretch}{2}
 
 \begin{document}
 	\begin{titlepage}
@@ -167,4 +172,54 @@
 	\end{equation}
 	где $\rho \frac{dS^{(l)}}{dt} = -q_{1}^{n} dFs + \int_{Fs} \frac{\mu_{1k}}{T_{1}} J_{1k}^{n} dFs$ отражает изменение энтропии смеси за счёт обмена энергией и массой с окружающей средой. \textit{1-ое слагаемое} характеризует изменение энтропии за счёт обмена энергией ($q_{1}^{n}$ - поток тепла через поверхность), \textit{2-ое слагаемое} - за счёт обмена массой с окружающей средой ($J_{1k}^{n}$ - поток массы через поверхность). \par
 	\textit{2-ое слагаемое} $\rho \frac{dS^{(i)}}{dt} = \sigma$ определяет приращение энтропии смеси за счёт внутренних необратимых процессов и представляет собой произведение термодинамическиъ поток на термодинамические движущие силы. \par
+	Второй член, связанный с необратимостью процессов, называется \textit{производством} \textit{энтропии} $\sigma$ и представляет собой диссипативную функцию, причём $\sigma \ge 0$. \par
+	\textit{Производство энтропии} можно представить в виде
+	\begin{center}
+		$\sigma = \sum_{i} J_{i} X_{i}$,
+	\end{center}
+	где $J_{i}$, $X_{i}$ - термодинамические потоки и движущие силы необратимых процессов. \par
+	В состоянии равновесия для всех необратимых процессов, происходящих в гетерогенных полидисперсных средах,
+	\begin{center}
+		$J_{i} = 0$, $\>$, $X_{i} = 0$.
+	\end{center}
+	Поэтому естественно предположить, что по крайней мере для состояния вблизи равновесия между потоками и движущими силами существуют линейные однородные соотношения в виде
+	\begin{center}
+		$J_{i} = L_{i} X_{i}$.
+	\end{center}
+	\begin{center}
+		\textbf{Таблица потоков и соответствующих им движущих сил}
+	\end{center}
+
+	\small
+	\begin{tabularx}{\textwidth}{|*{2}{Y|}}
+		\hline
+		Потоки (\underline{следствия}) & Силы (\underline{причины}) \\
+
+		\hline
+		\multicolumn{2}{|c|}{ТЕНЗОРЫ} \\
+
+		\hline
+		$\tau_{1}^{kl}$ - поток вязких напряжений & $e_{1}^{kl}$ - тензор скоростей деформаций \\
+
+		\hline
+		\multicolumn{2}{|c|}{ВЕКТОРЫ} \\
+
+		\hline
+		$\vec{f}_{12} = L (\vec{\nu}_{1} - \vec{\nu}_{2}) = \mu 3\pi d (\vec{\nu}_{1} - \vec{\nu}_{2})$ (\textit{связь - з. Стокса}) - поток силы взаимодействия между несущей фазой и включением; $\mu$ - вязкость, $3 \pi d $ - размер частицы & $(\vec{\nu_{1}} - \vec{\nu_{2}})$ - движущая сила взаимодействия между потоком и включением \\
+
+		\hline
+		$\vec{q}_{1} = \lambda gradT_{1}$ (\textit{связь - з. Фурье})- поток тепла внутри несущей фазы; $\lambda$ - коэффициент теплопередачи & $gradT_{1} = \begin{pmatrix} \frac{\partial T_{1}}{\partial x} \\ \frac{\partial T_{1}}{\partial y} \\ \frac{\partial T_{1}}{\partial z} \end{pmatrix}$ - движущая сила теплопереноса \\
+
+		\hline
+		$\vec{J}_{1k} = D grad(\frac{\mu_{1k}}{T_{1}}) = D gradC_{1}$ (\textit{связь - з. Фика}) - поток массы в сплошной фазе & $grad(\frac{\mu_{1k}}{T_{1}}) = gradC_{1k} = \begin{pmatrix} \frac{\partial C_{1k}}{\partial x} \\ \frac{\partial C_{1k}}{\partial y} \\ \frac{\partial C_{1k}}{\partial z} \end{pmatrix}$ - движущая сила массопереноса с сплошной среде \\
+
+		\hline	
+		\multicolumn{2}{|c|}{СКАЛЯРЫ} \\
+		
+		\hline
+		$q_{12} = \beta_{12} 4\pi d^{2} (T_{1} - T_{2})$ (\textit{связь - ур. теплопередачи})- поток тепла между несущей фазой и включением; $\beta_{12}$ - коэффициент теплопередачи, $4 \pi d^{2}$ - поверхность частицы & $(T_{1} - T_{2})$ - движущая сила теплопереноса между несущей фазой и включением \\
+
+		\hline
+	\end{tabularx}
+	\large
 \end{document}
