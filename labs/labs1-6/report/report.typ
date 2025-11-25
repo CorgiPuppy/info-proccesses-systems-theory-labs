@@ -229,7 +229,6 @@ $ cases(
 #pagebreak()
 
 #align(center, block[
-	= Выполнение задачи
 	== Работа 1.2
 ])
 
@@ -250,7 +249,6 @@ $ cases(
 ])
 
 #align(center, block[
-	= Выполнение задачи
 	== Работа 1.3
 ])
 
@@ -275,7 +273,6 @@ $ cases(
 #pagebreak()
 
 #align(center, block[
-	= Выполнение задачи
 	== Работа 1.4
 ])
 
@@ -298,7 +295,6 @@ $ cases(
 #pagebreak()
 
 #align(center, block[
-	= Выполнение задачи
 	== Работа 1.5
 ])
 
@@ -321,7 +317,6 @@ $ cases(
 #pagebreak()
 
 #align(center, block[
-	= Выполнение задачи
 	== Работа 1.6
 ])
 
