@@ -133,7 +133,7 @@ void solveTask3() {
 		double x2 = p.y;
 		for (double t = 0; t < T; t += dt) {
 			x1 = (x1 - 4.0 * dt) / (1.0 + (2.0/3.0) * dt);
-			x2 = (x2 - 5.0 * dt) / (1.0 - (2.0/3.0) * dt);
+			x2 = x2 * (1.0 + (2.0/5.0) * dt);
 			
 			traj.push_back({x1, x2});
 		}
