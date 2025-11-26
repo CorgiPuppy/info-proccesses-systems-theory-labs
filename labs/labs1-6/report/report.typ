@@ -63,7 +63,7 @@
 		columns: (8.85cm,) + (10.8cm,),
 		stroke: none,
 
-		table.cell(text(size: 13.4pt, "Выполнил студент группы КС-36:"), align: right), table.cell(text(size: 14.4pt, "Золотухин Андрей Александрович"), align: left),
+		table.cell(text(size: 13.4pt, "Выполнил студент группы КС-46:"), align: right), table.cell(text(size: 14.4pt, "Золотухин Андрей Александрович"), align: left),
 		table.cell(text(size: 14.4pt, "Ссылка на репозиторий:"), align: right), table.cell(text(size: 14.4pt, "https://github.com/"), align: left),
 		table.cell("", align: right), table.cell(text(size: 14.4pt, "CorgiPuppy/"), align: left),
 		table.cell("", align: right), table.cell(text(size: 14.4pt, "info-proccesses-systems-theory-labs"), align: left),
@@ -213,6 +213,15 @@ $ cases(
 #align(center, block[
 	=== Аналитическое решение
 ])
+На @work1-1AnalyticalSolution представлено аналитическое решение.
+#figure(
+	image(
+		"../assets/Work1-1.jpg",
+		height: 500pt,
+	),
+	caption: [Аналитическое решение.],
+	supplement: [Рис.]
+) <work1-1AnalyticalSolution>
 
 #align(center, block[
 	=== Алгоритм программы
@@ -221,10 +230,24 @@ $ cases(
 #align(center, block[
 	=== Графики
 ])
+На @work1-1y-x представлен фазовый портрет.
+#figure(
+	image("../plots/pictures/task1_phase.png"),
 
-#align(center, block[
-	=== Код
-])
+	caption: [Фазовый портрет.],
+	supplement: [Рис.],
+) <work1-1y-x>
+
+На @work1-1x-t-y-t представлены зависимости x(t) и y(t).
+#figure(
+	grid(
+		columns: 2,
+		image("../plots/pictures/task1_x_t.png"),
+		image("../plots/pictures/task1_y_t.png"),
+	),
+	caption: [Зависимости x(t) и y(t).],
+	supplement: [Рис.],
+) <work1-1x-t-y-t>
 
 #pagebreak()
 
@@ -235,6 +258,15 @@ $ cases(
 #align(center, block[
 	=== Аналитическое решение
 ])
+На @work1-2AnalyticalSolution представлено аналитическое решение.
+#figure(
+	image(
+		"../assets/Work1-2.jpg",
+		height: 500pt,
+	),
+	caption: [Аналитическое решение.],
+	supplement: [Рис.]
+) <work1-2AnalyticalSolution>
 
 #align(center, block[
 	=== Алгоритм программы
@@ -243,20 +275,43 @@ $ cases(
 #align(center, block[
 	=== Графики
 ])
+На @work1-2y-x представлен фазовый портрет.
+#figure(
+	image("../plots/pictures/task2_phase.png"),
 
-#align(center, block[
-	=== Код
-])
+	caption: [Фазовый портрет.],
+	supplement: [Рис.],
+) <work1-2y-x>
+
+На @work1-2x-t-y-t представлены зависимости x(t) и y(t).
+#figure(
+	grid(
+		columns: 2,
+		image("../plots/pictures/task2_x_t.png"),
+		image("../plots/pictures/task2_y_t.png"),
+	),
+	caption: [Зависимости x(t) и y(t).],
+	supplement: [Рис.],
+) <work1-2x-t-y-t>
+
+#pagebreak()
 
 #align(center, block[
 	== Работа 1.3
 ])
 
-#pagebreak()
-
 #align(center, block[
 	=== Аналитическое решение
 ])
+На @work1-3AnalyticalSolution представлено аналитическое решение.
+#figure(
+	image(
+		"../assets/Work1-3.jpg",
+		height: 500pt,
+	),
+	caption: [Аналитическое решение.],
+	supplement: [Рис.]
+) <work1-3AnalyticalSolution>
 
 #align(center, block[
 	=== Алгоритм программы
@@ -265,10 +320,24 @@ $ cases(
 #align(center, block[
 	=== Графики
 ])
+На @work1-3y-x представлен фазовый портрет.
+#figure(
+	image("../plots/pictures/task3_phase.png"),
 
-#align(center, block[
-	=== Код
-])
+	caption: [Фазовый портрет.],
+	supplement: [Рис.],
+) <work1-3y-x>
+
+На @work1-3x-t-y-t представлены зависимости x(t) и y(t).
+#figure(
+	grid(
+		columns: 2,
+		image("../plots/pictures/task3_x_t.png"),
+		image("../plots/pictures/task3_y_t.png"),
+	),
+	caption: [Зависимости x(t) и y(t).],
+	supplement: [Рис.],
+) <work1-3x-t-y-t>
 
 #pagebreak()
 
@@ -279,6 +348,15 @@ $ cases(
 #align(center, block[
 	=== Аналитическое решение
 ])
+На @work1-4AnalyticalSolution представлено аналитическое решение.
+#figure(
+	image(
+		"../assets/Work1-4.jpg",
+		height: 500pt,
+	),
+	caption: [Аналитическое решение.],
+	supplement: [Рис.]
+) <work1-4AnalyticalSolution>
 
 #align(center, block[
 	=== Алгоритм программы
@@ -287,10 +365,24 @@ $ cases(
 #align(center, block[
 	=== Графики
 ])
+На @work1-4y-x представлен фазовый портрет.
+#figure(
+	image("../plots/pictures/task4_phase.png"),
 
-#align(center, block[
-	=== Код
-])
+	caption: [Фазовый портрет.],
+	supplement: [Рис.],
+) <work1-4y-x>
+
+На @work1-4x-t-y-t представлены зависимости x(t) и y(t).
+#figure(
+	grid(
+		columns: 2,
+		image("../plots/pictures/task4_x_t.png"),
+		image("../plots/pictures/task4_y_t.png"),
+	),
+	caption: [Зависимости x(t) и y(t).],
+	supplement: [Рис.],
+) <work1-4x-t-y-t>
 
 #pagebreak()
 
@@ -301,6 +393,15 @@ $ cases(
 #align(center, block[
 	=== Аналитическое решение
 ])
+На @work1-5AnalyticalSolution представлено аналитическое решение.
+#figure(
+	image(
+		"../assets/Work1-5.jpg",
+		height: 500pt,
+	),
+	caption: [Аналитическое решение.],
+	supplement: [Рис.]
+) <work1-5AnalyticalSolution>
 
 #align(center, block[
 	=== Алгоритм программы
@@ -309,10 +410,24 @@ $ cases(
 #align(center, block[
 	=== Графики
 ])
+На @work1-5y-x представлен фазовый портрет.
+#figure(
+	image("../plots/pictures/task5_phase.png"),
 
-#align(center, block[
-	=== Код
-])
+	caption: [Фазовый портрет.],
+	supplement: [Рис.],
+) <work1-5y-x>
+
+На @work1-5x-t-y-t представлены зависимости x(t) и y(t).
+#figure(
+	grid(
+		columns: 2,
+		image("../plots/pictures/task5_x_t.png"),
+		image("../plots/pictures/task5_y_t.png"),
+	),
+	caption: [Зависимости x(t) и y(t).],
+	supplement: [Рис.],
+) <work1-5x-t-y-t>
 
 #pagebreak()
 
@@ -323,6 +438,15 @@ $ cases(
 #align(center, block[
 	=== Аналитическое решение
 ])
+На @work1-6AnalyticalSolution представлено аналитическое решение.
+#figure(
+	image(
+		"../assets/Work1-6.jpg",
+		height: 500pt,
+	),
+	caption: [Аналитическое решение.],
+	supplement: [Рис.]
+) <work1-6AnalyticalSolution>
 
 #align(center, block[
 	=== Алгоритм программы
@@ -331,10 +455,35 @@ $ cases(
 #align(center, block[
 	=== Графики
 ])
+На @work1-6y-x представлен фазовый портрет.
+#figure(
+	image("../plots/pictures/task6_phase.png"),
+
+	caption: [Фазовый портрет.],
+	supplement: [Рис.],
+) <work1-6y-x>
+
+На @work1-6x-t-y-t представлены зависимости x(t) и y(t).
+#figure(
+	grid(
+		columns: 2,
+		image("../plots/pictures/task6_x_t.png"),
+		image("../plots/pictures/task6_y_t.png"),
+	),
+	caption: [Зависимости x(t) и y(t).],
+	supplement: [Рис.],
+) <work1-6x-t-y-t>
+
+#pagebreak()
 
 #align(center, block[
-	=== Код
+	= Код
 ])
+#let codeConstantsblock = read("../include/Constants.h")
+#raw(codeConstantsblock, block:true, lang: "c++")
+
+#let codeblock = read("../src/main.cpp")
+#raw(codeblock, block:true, lang: "c++")
 
 #pagebreak()
 
