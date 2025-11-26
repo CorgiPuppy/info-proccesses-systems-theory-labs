@@ -135,3 +135,29 @@ void solveTask3() {
 
 	savetoDat(filename, trajectories, dt);
 }
+
+void solveTask4() {
+	using namespace Constants::Task4;
+
+	double mu1s = 7.0/2.0;
+	double mu0s = 7.0/2.0;
+	
+	std::vector<Point> starts = generateInitialConditions(mu0s, mu1s, 1.0);
+	std::vector<std::vector<Point>> trajectories;
+
+	for (Point p : starts) {
+		std::vector<Point> traj;
+		traj.push_back(p);
+		double mu0 = p.x;
+		double mu1 = p.y;
+		for (double t = 0; t < T; t += dt) {
+			double dmu0 = dt * (k * mu1 - b + q);
+			double dmu1 = dt * (mu0 * (eta1 - eta2) + d);
+			
+			traj.push_back({mu0, mu1});
+		}
+		trajectories.push_back(traj);
+	}
+
+	savetoDat(filename, trajectories, dt);
+}
