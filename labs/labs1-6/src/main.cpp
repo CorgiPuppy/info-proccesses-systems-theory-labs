@@ -194,4 +194,33 @@ void solveTask5() {
 	saveToDat(filename, trajectories, dt);
 }
 
+void solveTask6() {
+	using namespace Constants::Task6;
+
+	double x1s = -1.0;
+	double x2s = -1.0;
+	
+	std::vector<Point> starts = generateInitialConditions(x1s, x2s, 0.01);
+	std::vector<std::vector<Point>> trajectories;
+
+	for (Point p : starts) {
+		std::vector<Point> traj;
+		traj.push_back(p);
+		double x1 = p.x;
+		double x2 = p.y;
+		for (double t = 0; t < T; t += dt) {
+			double x1_old = x1;
+			double x2_old = x2;
+
+			x1 = (x1_old + dt * (-x2_old + 2.0)) / (1.0 - 3.0 * dt);
+			x2 = (x2_old + dt * (4.0 * x1_old + 7.0)) / (1.0 - dt * 3.0);
+			
+			traj.push_back({x1, x2});
+		}
+		trajectories.push_back(traj);
+	}
+
+	saveToDat(filename, trajectories, dt);
+}
+
 
