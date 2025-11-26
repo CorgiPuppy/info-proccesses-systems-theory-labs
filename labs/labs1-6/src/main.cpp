@@ -107,7 +107,7 @@ void solveTask2() {
 		trajectories.push_back(traj);
 	}
 
-	savetoDat(filename, trajectories, dt);
+	saveToDat(filename, trajectories, dt);
 }
 
 void solveTask3() {
@@ -133,14 +133,14 @@ void solveTask3() {
 		trajectories.push_back(traj);
 	}
 
-	savetoDat(filename, trajectories, dt);
+	saveToDat(filename, trajectories, dt);
 }
 
 void solveTask4() {
 	using namespace Constants::Task4;
 
-	double mu1s = 7.0/2.0;
-	double mu0s = 7.0/2.0;
+	double mu1s = (b - q) / k;
+	double mu0s = -d / (eta1 - eta2);
 	
 	std::vector<Point> starts = generateInitialConditions(mu0s, mu1s, 1.0);
 	std::vector<std::vector<Point>> trajectories;
@@ -154,10 +154,44 @@ void solveTask4() {
 			double dmu0 = dt * (k * mu1 - b + q);
 			double dmu1 = dt * (mu0 * (eta1 - eta2) + d);
 			
+			mu0 += dmu0;
+			mu1 += dmu1;
+
 			traj.push_back({mu0, mu1});
 		}
 		trajectories.push_back(traj);
 	}
 
-	savetoDat(filename, trajectories, dt);
+	saveToDat(filename, trajectories, dt);
 }
+
+void solveTask5() {
+	using namespace Constants::Task5;
+
+	double x1s = 3.0/2.0;
+	double x2s = 3.0/2.0;
+	
+	std::vector<Point> starts = generateInitialConditions(x1s, x2s, 0.5);
+	std::vector<std::vector<Point>> trajectories;
+
+	for (Point p : starts) {
+		std::vector<Point> traj;
+		traj.push_back(p);
+		double x1 = p.x;
+		double x2 = p.y;
+		for (double t = 0; t < T; t += dt) {
+			double x1_old = x1;
+			double x2_old = x2;
+
+			x1 = (x1_old + dt * (-2.0 * x2_old + 6.0)) / (1.0 + 2.0 * dt);
+			x2 = (x2_old + dt * 3.0 * x1_old) / (1.0 + dt * 3.0);
+			
+			traj.push_back({x1, x2});
+		}
+		trajectories.push_back(traj);
+	}
+
+	saveToDat(filename, trajectories, dt);
+}
+
+
