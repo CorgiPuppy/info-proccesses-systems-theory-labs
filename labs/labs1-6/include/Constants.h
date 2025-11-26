@@ -38,7 +38,7 @@ namespace Constants {
 		const double d = 2.0;
 
 		const double dt = 0.01;
-		const double T = 2.0;
+		const double T = 10.0;
 		const std::string filename = "task4.dat";
 	}
 
