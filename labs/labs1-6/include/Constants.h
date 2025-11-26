@@ -19,13 +19,13 @@ namespace Constants {
 
 	namespace Task2 {
 		const double dt = 0.01;
-		const double T = 2.0;
+		const double T = 3.0;
 		const std::string filename = "task2.dat";
 	}
 
 	namespace Task3 {
 		const double dt = 0.01;
-		const double T = 4.0;
+		const double T = 6.5;
 		const std::string filename = "task3.dat";
 	}
 
@@ -37,7 +37,7 @@ namespace Constants {
 		const double eta2 = 1.0;
 		const double d = 2.0;
 
-		const double dt = 0.01;
+		const double dt = 0.001;
 		const double T = 10.0;
 		const std::string filename = "task4.dat";
 	}
