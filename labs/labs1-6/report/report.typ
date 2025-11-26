@@ -226,47 +226,44 @@ $ cases(
 #align(center, block[
 	=== Алгоритм программы
 ])
-#diagram(
-	node-stroke: 1pt,
-	node((0,0), [Start Task 1.1], corner-radius: 2pt, extrude: (0, 3)),
-	edge("-|>"),
-	node((0,1), align(center)[
-		Инициализация:\
-		Стационарная точка $(x_s, y_s)$\
-		8 начальных точек $(x_0, y_0)$ в список `trajectories`
-	]),
-	edge("-|>"),
-	node((0,2), align(center)[
-		$t = 0$
-	]),
-	edge("-|>"),
-	node((0,3), align(center)[
-		$t < T_{max}$?
-	], shape: diamond),
-	edge("d,r,u", "-|>", [No], label-pos: 0.1),
-    node((1,1), [End], corner-radius: 2pt, extrude: (0, 3)), 
-	edge("-|>", [Yes]),
-	node((0,4), align(center)[
-		Цикл по всем траекториям $i = 1..8$
-	]),
-	edge("-|>"),
-	node((0,5), align(center)[
-		$d x = (1/tau (x_0 - x_i) - k_1 x_i) d t$\
-		$d y = (-1/tau y_i + k_1 x_i - k_2 y_i) d t$\
-		$x_i = x_i + d x$\
-		$y_i = y_i + d y$
-	]),
-	edge("-|>"),
-	node((0,6), align(center)[
-		Запись $(t, x_i, y_i)$ в буфер
-	]),
-	edge("-|>"),
-	node((0,7), align(center)[
-		$t = t + d t$
-	]),
-	edge("l,u,u,u,u,r", "-|>")
-)
-
+#align(center, block[
+	#diagram(
+		node-stroke: 1pt,
+		node((0,0), [Start], corner-radius: 2pt, extrude: (0, 3)),
+		edge("-|>"),
+		node((0,1), align(center)[
+			Инициализация:\
+			Стационарная точка \
+			Генерация 8 условий\
+			$t = 0$
+		]),
+		edge("-|>"),
+		node((0,3), align(center)[
+			$t = T_(m a x)$
+		], shape: diamond),
+		edge("-|>", [Yes]),
+		edge("d", "-|>", [No]),
+		node((1,3), [End], corner-radius: 2pt, extrude: (0, 3)),
+		node((0,4), align(center)[
+			Цикл по траекториям $i$
+		]),
+		edge("-|>"),
+		node((0,5), align(center)[
+			Сохранение $x_(1 o l d), x_(2 o l d)$\
+			$x_i = #ptgk("D") t * (frac(1, #ptgk("t") (x_0 - x) - k_1 * x))$\
+			$y_i = #ptgk("D") t * (- frac(1, #ptgk("t") * y + k_1 x - k_2 y))$
+		]),
+		edge("-|>"),
+		node((0,6), align(center)[
+			Запись $(t, x_(1 i), x_(2 i))$
+		]),
+		edge("-|>"),
+		node((0,7), align(center)[
+			$t = t + #ptgk("D") t$
+		]),
+		edge("l,u,u,u,u,r", "-|>")
+	)
+])
 #align(center, block[
 	=== Графики
 ])
@@ -310,6 +307,44 @@ $ cases(
 
 #align(center, block[
 	=== Алгоритм программы
+])
+#align(center, block[
+	#diagram(
+		node-stroke: 1pt,
+		node((0,0), [Start], corner-radius: 2pt, extrude: (0, 3)),
+		edge("-|>"),
+		node((0,1), align(center)[
+			Инициализация:\
+			Стационарная точка $(-5, 15/2)$\
+			Генерация 8 условий\
+			$t = 0$
+		]),
+		edge("-|>"),
+		node((0,3), align(center)[
+			$t = T_(m a x)$
+		], shape: diamond),
+		edge("-|>", [Yes]),
+		edge("d", "-|>", [No]),
+		node((1,3), [End], corner-radius: 2pt, extrude: (0, 3)),
+		node((0,4), align(center)[
+			Цикл по траекториям $i$
+		]),
+		edge("-|>"),
+		node((0,5), align(center)[
+			Сохранение $x_(1 o l d), x_(2 o l d)$\
+			$x_(1 i) = (x_(1 o l d) + 5 #ptgk("D") t) / (1 - #ptgk("D") t)$\
+			$x_(2 i) = (x_(2 o l d) - 5 #ptgk("D") t) * (1 - 2/3 #ptgk("D") t)$
+		]),
+		edge("-|>"),
+		node((0,6), align(center)[
+			Запись $(t, x_(1 i), x_(2 i))$
+		]),
+		edge("-|>"),
+		node((0,7), align(center)[
+			$t = t + #ptgk("D") t$
+		]),
+		edge("l,u,u,u,u,r", "-|>")
+	)
 ])
 
 #align(center, block[
@@ -356,6 +391,44 @@ $ cases(
 #align(center, block[
 	=== Алгоритм программы
 ])
+#align(center, block[
+	#diagram(
+		node-stroke: 1pt,
+		node((0,0), [Start], corner-radius: 2pt, extrude: (0, 3)),
+		edge("-|>"),
+		node((0,1), align(center)[
+			Инициализация:\
+			Стационарная точка $(-6, 0)$\
+			Генерация 8 условий\
+			$t = 0$
+		]),
+		edge("-|>"),
+		node((0,3), align(center)[
+			$t = T_(m a x)$
+		], shape: diamond),
+		edge("-|>", [Yes]),
+		edge("d", "-|>", [No]),
+		node((1,3), [End], corner-radius: 2pt, extrude: (0, 3)),
+		node((0,4), align(center)[
+			Цикл по траекториям $i$
+		]),
+		edge("-|>"),
+		node((0,5), align(center)[
+			Сохранение $x_(1 o l d), x_(2 o l d)$\
+			$x_(1 i) = (x_(1 o l d) - 4 #ptgk("D") t) / (1 + frac(2, 3) #ptgk("D") t)$\
+			$x_(2 i) = x_(2 o l d) * (1 + 2/5 #ptgk("D"))$
+		]),
+		edge("-|>"),
+		node((0,6), align(center)[
+			Запись $(t, x_(1 i), x_(2 i))$
+		]),
+		edge("-|>"),
+		node((0,7), align(center)[
+			$t = t + #ptgk("D") t$
+		]),
+		edge("l,u,u,u,u,r", "-|>")
+	)
+])
 
 #align(center, block[
 	=== Графики
@@ -400,6 +473,44 @@ $ cases(
 
 #align(center, block[
 	=== Алгоритм программы
+])
+#align(center, block[
+	#diagram(
+		node-stroke: 1pt,
+		node((0,0), [Start], corner-radius: 2pt, extrude: (0, 3)),
+		edge("-|>"),
+		node((0,1), align(center)[
+			Инициализация:\
+			Стационарная точка $(frac((b - q), k), frac(-d, e t a_1 - e t a_2)$\
+			Генерация 8 условий\
+			$t = 0$
+		]),
+		edge("-|>"),
+		node((0,3), align(center)[
+			$t = T_(m a x)$
+		], shape: diamond),
+		edge("-|>", [Yes]),
+		edge("d", "-|>", [No]),
+		node((1,3), [End], corner-radius: 2pt, extrude: (0, 3)),
+		node((0,4), align(center)[
+			Цикл по траекториям $i$
+		]),
+		edge("-|>"),
+		node((0,5), align(center)[
+			Сохранение $m u 0, m u 1$\
+			$m u 0_i = d m u 0 + #ptgk("D") t * (k * m u 1 - b + q)$\
+			$m u 1_i = d m u 1 + #ptgk("D") t * (m u 0 * (e t a 1 - e t a 2) + d)$
+		]),
+		edge("-|>"),
+		node((0,6), align(center)[
+			Запись $(t, m u 1_i, m u 1_i)$
+		]),
+		edge("-|>"),
+		node((0,7), align(center)[
+			$t = t + #ptgk("D") t$
+		]),
+		edge("l,u,u,u,u,r", "-|>")
+	)
 ])
 
 #align(center, block[
@@ -446,6 +557,44 @@ $ cases(
 #align(center, block[
 	=== Алгоритм программы
 ])
+#align(center, block[
+	#diagram(
+		node-stroke: 1pt,
+		node((0,0), [Start], corner-radius: 2pt, extrude: (0, 3)),
+		edge("-|>"),
+		node((0,1), align(center)[
+			Инициализация:\
+			Стационарная точка $(3/2, 3/2)$\
+			Генерация 8 условий\
+			$t = 0$
+		]),
+		edge("-|>"),
+		node((0,3), align(center)[
+			$t = T_(m a x)$
+		], shape: diamond),
+		edge("-|>", [Yes]),
+		edge("d", "-|>", [No]),
+		node((1,3), [End], corner-radius: 2pt, extrude: (0, 3)),
+		node((0,4), align(center)[
+			Цикл по траекториям $i$
+		]),
+		edge("-|>"),
+		node((0,5), align(center)[
+			Сохранение $x_(1 o l d), x_(2 o l d)$\
+			$x_(1 i) = (x_(1 o l d) + #ptgk("D") t(-2 x_(2 o l d) + 6)) / (1 + 2 #ptgk("D") t)$\
+			$x_(2 i) = (x_(2 o l d) + #ptgk("D") t 3 x_(1 o l d)) / (1 + 3 #ptgk("D") t)$
+		]),
+		edge("-|>"),
+		node((0,6), align(center)[
+			Запись $(t, x_(1 i), x_(2 i))$
+		]),
+		edge("-|>"),
+		node((0,7), align(center)[
+			$t = t + #ptgk("D") t$
+		]),
+		edge("l,u,u,u,u,r", "-|>")
+	)
+])
 
 #align(center, block[
 	=== Графики
@@ -491,45 +640,44 @@ $ cases(
 #align(center, block[
 	=== Алгоритм программы
 ])
-#diagram(
-	node-stroke: 1pt,
-	node((0,0), [Start Task 1.6], corner-radius: 2pt, extrude: (0, 3)),
-	edge("-|>"),
-	node((0,1), align(center)[
-		Инициализация:\
-		Стационарная точка $(-1, -1)$\
-		Генерация 8 условий (очень близко к центру)
-	]),
-	edge("-|>"),
-	node((0,2), align(center)[
-		$t = 0$
-	]),
-	edge("-|>"),
-	node((0,3), align(center)[
-		$t < T_(m a x)$?
-	], shape: diamond),
-	edge("d,r,u", "-|>", [No]),
-    node((1,1), [End], corner-radius: 2pt, extrude: (0, 3)),
-	edge("-|>", [Yes]),
-	node((0,4), align(center)[
-		Цикл по траекториям $i$
-	]),
-	edge("-|>"),
-	node((0,5), align(center)[
-		Сохранение $x_(o l d), y_(o l d)$\
-		$x_i = (x_(o l d) + d t(-y_(o l d) + 2)) / (1 - 3 d t)$\
-		$y_i = (y_(o l d) + d t(4 x_(o l d) + 7)) / (1 - 3 d t)$
-	]),
-	edge("-|>"),
-	node((0,6), align(center)[
-		Запись $(t, x_i, y_i)$
-	]),
-	edge("-|>"),
-	node((0,7), align(center)[
-		$t = t + d t$
-	]),
-	edge("l,u,u,u,u,r", "-|>")
-)
+#align(center, block[
+	#diagram(
+		node-stroke: 1pt,
+		node((0,0), [Start], corner-radius: 2pt, extrude: (0, 3)),
+		edge("-|>"),
+		node((0,1), align(center)[
+			Инициализация:\
+			Стационарная точка $(-1, -1)$\
+			Генерация 8 условий\
+			$t = 0$
+		]),
+		edge("-|>"),
+		node((0,3), align(center)[
+			$t = T_(m a x)$
+		], shape: diamond),
+		edge("-|>", [Yes]),
+		edge("d", "-|>", [No]),
+		node((1,3), [End], corner-radius: 2pt, extrude: (0, 3)),
+		node((0,4), align(center)[
+			Цикл по траекториям $i$
+		]),
+		edge("-|>"),
+		node((0,5), align(center)[
+			Сохранение $x_(2 o l d), x_(2 o l d)$\
+			$x_(1 i) = (x_(1 o l d) + #ptgk("D") t(-x_(2 o l d) + 2)) / (1 - 3 #ptgk("D") t)$\
+			$x_(2 i) = (x_(2 o l d) + #ptgk("D") t(4 x_(1 o l d) + 7)) / (1 - 3 #ptgk("D") t)$
+		]),
+		edge("-|>"),
+		node((0,6), align(center)[
+			Запись $(t, x_(1 i), x_(2 i))$
+		]),
+		edge("-|>"),
+		node((0,7), align(center)[
+			$t = t + #ptgk("D") t$
+		]),
+		edge("l,u,u,u,u,r", "-|>")
+	)
+])
 
 #align(center, block[
 	=== Графики
