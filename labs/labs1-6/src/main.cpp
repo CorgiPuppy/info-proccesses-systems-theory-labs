@@ -13,6 +13,12 @@ struct Point {
 
 void saveToDat(const std::string&, const std::vector<std::vector<Point>>&, double);
 std::vector<Point> generateInitialConditions(double, double, double);
+void solveTask1();
+void solveTask2();
+void solveTask3();
+void solveTask4();
+void solveTask5();
+void solveTask6();
 
 int main() {
 	
@@ -48,3 +54,33 @@ std::vector<Point> generateInitialConditions(double xs, double ys, double epsilo
 		{xs + epsilon, ys - epsilon}, {xs - epsilon, ys + epsilon}
 	};
 }
+
+void solveTask1() {
+	using namespace Constants::Task1;
+
+	double xs = x0 / (1.0 + k1 * tau);
+	double ys = (k1 * xs) / (1.0/tau + k2);
+	
+	std::vector<Point> starts = generateInitialConditions(xs, ys, 2.0);
+	std::vector<std::vector<Point>> trajectories;
+
+	for (Point p : starts) {
+		std::vector<Point> traj;
+		traj.push_back(p);
+		double x = p.x;
+		double y = p.y;
+		for (double t = 0; t < T; t += dt) {
+			double dx = dt * (1.0/tau * (x0 - x) - k1 * x);
+			double dy = dt * (-1.0/tau * y + k1 * x - k2 * y);
+			
+			x += dx;
+			y += dy;
+
+			traj.push_back({x, y});
+		}
+		trajectories.push_back(traj);
+	}
+
+	savetoDat(filename, trajectories, dt);
+}
+
