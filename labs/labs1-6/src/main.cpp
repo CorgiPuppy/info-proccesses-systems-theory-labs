@@ -21,7 +21,14 @@ void solveTask5();
 void solveTask6();
 
 int main() {
-	
+	solveTask1();
+	solveTask2();
+	solveTask3();
+	solveTask4();
+	solveTask5();
+	solveTask6();
+
+	return 0;
 }
 
 void saveToDat(const std::string& filename, const std::vector<std::vector<Point>>& trajectories, double dt) {
