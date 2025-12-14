@@ -48,6 +48,21 @@ int main() {
 		file.close();
 	}
 
+	std::string bif_path = Constants::DAT_DIR + Constants::bif_filename;
+	std::ofstream bifFile(bif_path);
+
+	if (bifFile.is_open()) {
+		for (double a = -1.0; a <= 0.2; a += 0.01) {
+			if (a <= 0) {
+				double x_stable = 1.0 - std::sqrt(-a);
+				double x_unstable = 1.0 + std::sqrt(-a);
+
+				bifFile << a << " " << x_stable << " " << x_unstable << "\n";
+			}
+		}
+		bifFile.close();
+	}
+
 	return 0;
 }
 
