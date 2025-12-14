@@ -16,7 +16,7 @@ namespace Constants {
 	};
 
 	const std::vector<std::string> filenames = {
-		"alpha_minux_0_25.dat",
+		"alpha_minus_0_25.dat",
 		"alpha_0.dat",
 		"alpha_plus_0_25.dat"
 	};
