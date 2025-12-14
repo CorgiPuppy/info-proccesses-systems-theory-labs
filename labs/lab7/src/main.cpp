@@ -15,8 +15,40 @@ struct Point {
 };
 
 int main() {
-	return 0;
+	std::vector<Point> starts;
+	for (double x = 0.0; x <= 2.0; x += 0.5)
+		for (double y = 0.0; y <= 2.0; y += 0.5)
+			starts.push_back({x, y});
 
+	for (long unsigned int i = 0; i < Constants::alphas.size(); i++) {
+		double alpha = Constants::alphas[i];
+		std::string path = Constants::DAT_DIR + Constants::filenames[i];
+
+		std::ofstream file(path);
+		if (!file.is_open()) {
+			std::cerr << "Ошибка открытия файла: " << path << std::endl;
+			continue;
+		}
+		file << std::fixed << std::setprecision(6);
+
+		for (Point start : starts) {
+			double x1 = start.x;
+			double x2 = start.y;
+
+			for (double t = 0; t <= Constants::T; t += Constants::dt) {
+				if (std::abs(x1) > 50.0 || std::abs(x2) > 50.0)
+					break;
+
+				file << t << " " << x1 << " " << x2 << "\n";
+				step(x1, x2, Constants::dt, alpha);
+			}
+			file << "\n\n";
+		}
+
+		file.close();
+	}
+
+	return 0;
 }
 
 void step(double& x1, double& x2, double dt, double alpha) {
