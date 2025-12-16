@@ -3,8 +3,8 @@ set terminal pngcairo size 800,600 enhanced font 'Arial,12'
 set title "Фазовый портрет ({/Symbol a} = 1.5)"
 set xlabel "x1"
 set ylabel "x2"
-set xrange [3:3]
-set yrange [3:3]
+set xrange [-3:3]
+set yrange [-3:3]
 set grid
 set size square
 
