@@ -68,7 +68,7 @@
 		table.cell("", align: right), table.cell(text(size: 14.4pt, "CorgiPuppy/"), align: left),
 		table.cell("", align: right), table.cell(text(size: 14.4pt, "info-proccesses-systems-theory-labs"), align: left),
 		table.cell(text(size: 14.4pt, "Принял:"), align: right), table.cell(text(size: 14.4pt, "Зинченко Дарья Ивановна"), align: left),
-		table.cell(text(size: 14.4pt, "Дата сдачи:"), align: right), table.cell(text(size: 14.4pt, "17.12.25"), align: left),
+		table.cell(text(size: 14.4pt, "Дата сдачи:"), align: right), table.cell(text(size: 14.4pt, "20.12.25"), align: left),
 		
 	)
 ]
@@ -135,8 +135,7 @@ $ cases(
 #align(center, block[
 	=== Аналитическое решение
 ])
-/*
-На @work1-1AnalyticalSolution представлено аналитическое решение.
+На @work7AnalyticalSolution представлено аналитическое решение.
 #figure(
 	image(
 		"../assets/Work7.jpg",
@@ -144,8 +143,7 @@ $ cases(
 	),
 	caption: [Аналитическое решение.],
 	supplement: [Рис.]
-) <work1-1AnalyticalSolution>
-*/
+) <work7AnalyticalSolution>
 
 #align(center, block[
 	=== Графики
@@ -198,4 +196,5 @@ $ cases(
 #align(center, block[
 	= Выводы
 ])
-
+Аналитическое решение с помощью 1-го метода Ляпунова показло, что в системе наблюдается седло-узловая бифуркация. При значениях управляющего параметра меньше 0 в системе существуют два положения равновесия: устойчивый узел и седло. При значениях больше 0 действительных значений нет. В момент #ptgk("a") = 0 находится точка равновесия типа "седло-узел". \
+Численное моделирование с использованием явной схемы Эйлера подтвердило теоретические выводы.
