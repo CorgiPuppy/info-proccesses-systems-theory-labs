@@ -55,7 +55,7 @@ void solveTask2() {
             cerr << "Error opening: " << path << endl;
             continue;
         }
-        file << fixed << setprecision(6);
+        file << fixed << setprecision(12);
 
 
         for(auto start : starts) {
