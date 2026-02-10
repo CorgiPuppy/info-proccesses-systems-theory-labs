@@ -148,11 +148,14 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 На @iter_5 представлен фазовый портрет при #ptgk("a") = 5.
 #figure(
 	grid(
-		image("../plots/pictures/iter_5.png")
+		image("../plots/pictures/iter_5.png"),
 	),
 	caption: [Фазовый портрет при #ptgk("a") = 5.],
 	supplement: [Рис.],
 ) <iter_5>
+#figure(
+	image("../plots/pictures/phase_5.png")
+)
 На @iter_10 представлен фазовый портрет при #ptgk("a") = 10.
 #figure(
 	grid(
@@ -161,6 +164,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 10.],
 	supplement: [Рис.],
 ) <iter_10>
+#figure(
+	image("../plots/pictures/phase_10.png")
+)
 На @iter_15 представлен фазовый портрет при #ptgk("a") = 15.
 #figure(
 	grid(
@@ -169,6 +175,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 15.],
 	supplement: [Рис.],
 ) <iter_15>
+#figure(
+	image("../plots/pictures/phase_15.png")
+)
 На @iter_16 представлен фазовый портрет при #ptgk("a") = 16.
 #figure(
 	grid(
@@ -177,6 +186,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 16.],
 	supplement: [Рис.],
 ) <iter_16>
+#figure(
+	image("../plots/pictures/phase_16.png")
+)
 На @iter_17 представлен фазовый портрет при #ptgk("a") = 17.
 #figure(
 	grid(
@@ -185,6 +197,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 17.],
 	supplement: [Рис.],
 ) <iter_17>
+#figure(
+	image("../plots/pictures/phase_17.png")
+)
 На @iter_17_25 представлен фазовый портрет при #ptgk("a") = 17.25.
 #figure(
 	grid(
@@ -193,6 +208,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 17.25.],
 	supplement: [Рис.],
 ) <iter_17_25>
+#figure(
+	image("../plots/pictures/phase_17_25.png")
+)
 На @iter_17_5 представлен фазовый портрет при #ptgk("a") = 17_5.
 #figure(
 	grid(
@@ -201,6 +219,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 17.5.],
 	supplement: [Рис.],
 ) <iter_17_5>
+#figure(
+	image("../plots/pictures/phase_17_5.png")
+)
 На @iter_17_75  представлен фазовый портрет при #ptgk("a") = 17_75.
 #figure(
 	grid(
@@ -209,6 +230,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 17.75.],
 	supplement: [Рис.],
 ) <iter_17_75>
+#figure(
+	image("../plots/pictures/phase_17_75.png")
+)
 На @iter_17_85 представлен фазовый портрет при #ptgk("a") = 17.85.
 #figure(
 	grid(
@@ -217,6 +241,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 17.85.],
 	supplement: [Рис.],
 ) <iter_17_85>
+#figure(
+	image("../plots/pictures/phase_17_85.png")
+)
 На @iter_18 представлен фазовый портрет при #ptgk("a") = 18.
 #figure(
 	grid(
@@ -225,6 +252,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 18.],
 	supplement: [Рис.],
 ) <iter_18>
+#figure(
+	image("../plots/pictures/phase_18.png")
+)
 На @iter_18_5 представлен фазовый портрет при #ptgk("a") = 18.5.
 #figure(
 	grid(
@@ -233,6 +263,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 18.5.],
 	supplement: [Рис.],
 ) <iter_18_5>
+#figure(
+	image("../plots/pictures/phase_18_5.png")
+)
 На @iter_19 представлен фазовый портрет при #ptgk("a") = 19.
 #figure(
 	grid(
@@ -241,6 +274,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 19.],
 	supplement: [Рис.],
 ) <iter_19>
+#figure(
+	image("../plots/pictures/phase_19.png")
+)
 На @iter_20 представлен фазовый портрет при #ptgk("a") = 20.
 #figure(
 	grid(
@@ -249,6 +285,9 @@ $ x in [0; 1], #ptgk("a") in [0; 20]. $
 	caption: [Фазовый портрет при #ptgk("a") = 20.],
 	supplement: [Рис.],
 ) <iter_20>
+#figure(
+	image("../plots/pictures/phase_20.png")
+)
 
 #pagebreak()
 

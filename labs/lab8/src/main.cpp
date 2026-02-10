@@ -69,8 +69,8 @@ int main() {
 
 Point get_derivatives(double x1, double x2, double alpha) {
     double r2 = x1 * x1 + x2 * x2;
-    double dx1 = 0.4 * alpha * x1 - x2 - 0.6 * x1 * r2;
-    double dx2 = x1 + 0.4 * alpha * x2 - 0.6 * x2 * r2;
+    double dx1 = - 0.4 * alpha * x1 - x2 + 0.6 * x1 * r2;
+    double dx2 = x1 - 0.4 * alpha * x2 + 0.6 * x2 * r2;
     return {dx1, dx2};
 }
 
